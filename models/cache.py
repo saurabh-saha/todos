@@ -1,12 +1,7 @@
 import os
 import json
 import time
-from dotenv import load_dotenv
-
-
-load_dotenv()
-CACHE_FILE = os.getenv("CACHE_FILE")
-CACHE_EXPIRY_SECONDS = int(os.getenv("CACHE_EXPIRY_SECONDS", 60))
+import constants
 
 
 class CachedResponse:
@@ -24,8 +19,8 @@ class CachedResponse:
 class Cache:
     """Class to handle caching of API responses."""
     def __init__(self):
-        self.cache_file = CACHE_FILE
-        self.cache_expiry_seconds = CACHE_EXPIRY_SECONDS
+        self.cache_file = constants.CACHE_FILE
+        self.cache_expiry_seconds = constants.CACHE_EXPIRY_SECONDS
         self.cache_data = {}
 
     def load_cache(self):

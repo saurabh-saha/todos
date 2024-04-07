@@ -1,16 +1,8 @@
-import os
 import time
 from concurrent.futures import ThreadPoolExecutor
 from models.cache import Cache
-import requests
-from error import FetchTodoError
-from dotenv import load_dotenv
 from models.todo import Todo
-
-load_dotenv()
-CACHE_FILE = os.getenv("CACHE_FILE")
-CACHE_EXPIRY_SECONDS = int(os.getenv("CACHE_EXPIRY_SECONDS", 60))
-BASE_URL = os.getenv("BASE_URL")
+import constants
 
 
 def fetch_todo_with_cache(todo_id, cache=None):
@@ -24,7 +16,7 @@ def fetch_todo_with_cache(todo_id, cache=None):
     Returns:
         dict: The JSON response containing the TODO item.
     """
-    url = f"{BASE_URL}{todo_id}"
+    url = f"{constants.BASE_URL}{todo_id}"
 
     try:
         if cache:
