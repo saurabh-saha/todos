@@ -1,8 +1,9 @@
-1. create .env file
-BASE_URL=https://jsonplaceholder.typicode.com/todos/
-CACHE_FILE=api_cache.json
-CACHE_EXPIRY_SECONDS=3600
+Use pythin version 3
 
-2. install requirements.txt
+### 1. Start with creating create .env file
+1. BASE_URL=https://jsonplaceholder.typicode.com/todos/
+2. CACHE_FILE=api_cache.json
+3. CACHE_EXPIRY_SECONDS=3600
 
-3. python3
+### 2. Install requirements.txt using command
+pip install -r requirements.txt
