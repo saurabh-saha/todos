@@ -1,4 +1,7 @@
 ### Steps
-1. Use python version 3
-2. pip install -r requirements.txt
-3. pip cli.py
+1. git clone <repository_url>
+2. cd <repository_directory>
+3. docker build -t todos .
+4. docker run -d -p 8080:80 --name todos todos
+5. docker logs todos
+
